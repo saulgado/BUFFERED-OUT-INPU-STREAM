@@ -4,6 +4,8 @@ import java.io.FileOutputStream;
 public class Main {
     public static void main(String[] args) {
 
+        // Exemplo de BufferedOutputStream
+
         String data = "Primeiro teste";
 
         try {
@@ -25,5 +27,8 @@ public class Main {
         catch(Exception e) {
             e.getStackTrace();
         }
+
+        // Exemplo de BufferedInputStream
+
     }
 }
