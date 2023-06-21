@@ -1,11 +1,13 @@
+import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.IOException;
 
 public class Main {
     public static void main(String[] args) {
 
         // Exemplo de BufferedOutputStream
-
         String data = "Primeiro teste";
 
         try {
@@ -29,6 +31,29 @@ public class Main {
         }
 
         // Exemplo de BufferedInputStream
+        try {
+
+            // Cria um objeto da classe FileInputStream
+            FileInputStream arquivo = new FileInputStream("teste.txt");
+
+            // Cria um objeto da classe BufferedInputStream
+            BufferedInputStream input = new BufferedInputStream(arquivo);
+
+            // Lê o primeiro byte do arquivo
+            int i = input.read();
+
+            while (i != -1) {
+                System.out.print((char) i);
+
+                // Lê o próximo byte do arquivo
+                i = input.read();
+            }
+            input.close();
+        }
+
+        catch (Exception e) {
+            e.getStackTrace();
+        }
 
     }
 }
